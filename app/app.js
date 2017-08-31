@@ -5,6 +5,7 @@ $(document).ready(function () {
         $('#searchBox').val('');
         event.preventDefault(); //this stops the page from refreshing
 
+        //get and return the first 5 search terms from wikipedia
         $.getJSON('https://en.wikipedia.org/w/api.php?action=opensearch&datatype=json&limit=5&search=' + queryTerm + '&callback=?')
             .done(function (data) {
                 $("#results").empty();
